@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^26.1.0",
+    "@types/pg": "^8.20.0",
+    "excel": "^1.0.1",
+    "pdf-parse": "^2.4.5",
+    "pdf-parse-new": "^2.1.0",
+    "pg": "^8.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report",
+    "ui": "npx playwright test tests/ui/ui-tests.spec.ts --project=chromium  --headed",
+    "failed": "npx playwright test --last-failed  --headed"
+  }
+}

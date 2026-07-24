@@ -1,0 +1,295 @@
+{
+  "info": {
+    "_postman_id": "a7a8b1f8-2914-4ae4-913a-667a0d6a40f2",
+    "name": "GIT API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56580142",
+    "_collection_link": "https://go.postman.co/collection/56580142-a7a8b1f8-2914-4ae4-913a-667a0d6a40f2?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Creating a duplicate repository",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Verify the status code of the duplciate repository request",
+              "pm.test(\"Status code is 422\",function(){",
+              "    pm.expect(pm.response.code).to.eql(422)",
+              "});",
+              "",
+              "//Verify the status body contains  Unprocessable Entity ",
+              "pm.test(\"Status body contains Unprocessable Entity\",function(){",
+              "    pm.expect(pm.response.status).to.include(\"Unprocessable Entity\")",
+              "});",
+              "",
+              "//Verify the response time is less than 2 sec",
+              "pm.test(\"Response time is less than 2 sec\",function(){",
+              "    pm.expect(pm.response.responseTime).to.below(2000)",
+              "});",
+              "",
+              "//Verify the response body contains the messege \"Repository creation failed.\"",
+              "pm.test(\"Response body messege contains Repository creation failed.\",function(){",
+              "    let body=pm.response.json().message",
+              "    pm.expect(body).to.include(\"Repository creation failed.\")",
+              "});",
+              "",
+              "//Verify the response body contains the error messege -name already exists on this account",
+              "pm.test(\"Response body error contains name already exists on this account\",function(){",
+              "    let error=pm.response.json().errors[0].message  ",
+              "    pm.expect(error).to.include(\"name already exists on this account\")",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/vnd.github+json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"playwright-1\",\r\n    \"Description\":\"Sample Duplicate Repo from Postman\",\r\n    \"private\":true\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Base_Url}}/user/repos",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Creating a valid repository",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// pm.environment.set(\"Repo-Name\", \"playwright-2\"); // Set the value of the Owner environment variable\r",
+              "pm.globals.set(\"Repo-Name\", \"playwright-2\");\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "//Verify the status code of the valid repository request\r",
+              "pm.test(\"Status code is 201\",function(){\r",
+              "    pm.expect(pm.response.code).to.eql(201)\r",
+              "});\r",
+              "\r",
+              "//Verify the status body contains Created\r",
+              "pm.test(\"Status body contains Created\",function(){\r",
+              "    pm.expect(pm.response.status).to.include(\"Created\")\r",
+              "});\r",
+              "\r",
+              "//Verify the response body name \"playwright-2\"\r",
+              "pm.test(\"Response body name playwright-2\",function(){\r",
+              "    let body=pm.response.json().name\r",
+              "    pm.expect(body).to.include(\"playwright-2\")\r",
+              "});\r",
+              "\r",
+              "//Verify the response body contains private as true\r",
+              "pm.test(\"Response body contains repository type as private\",function(){\r",
+              "    let type=pm.response.json().private\r",
+              "    pm.expect(type).to.be.true\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/vnd.github+json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"{{Repo-Name}}\",\r\n    \"Description\":\"Sample Valid Repo from Postman\",\r\n    \"private\":true\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Base_Url}}/user/repos",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "user",
+            "repos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get existing repository with valid credentials",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "//Verify the status code of the valid repository request",
+              "pm.test(\"Status code is 200\", function(){",
+              "    pm.expect(pm.response.code).to.eql(200)",
+              "});",
+              "",
+              "//Verify the status body contains OK",
+              "pm.test(\"Status body contains OK\", function(){",
+              "    pm.expect(pm.response.status).to.include(\"OK\")",
+              "});",
+              "",
+              "//Verify the response body name \"playwright-2\"",
+              "pm.test(\"Response body name playwright-2\", function(){",
+              "    let body = pm.response.json().name",
+              "    pm.expect(body).to.include(\"playwright-2\")",
+              "});",
+              "",
+              "//Verify the response body contains private as true",
+              "pm.test(\"Response body contains repository type as private\", function(){",
+              "    let type = pm.response.json().private",
+              "    pm.expect(type).to.be.true",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{Base_Url}}/repos/{{Owner}}/playwright-2",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "playwright-2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update existing repository with valid credentials",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"private\":false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Base_Url}}/repos/{{Owner}}/{{Repo-Name}}",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "{{Repo-Name}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete existing repository",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{Token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"private\":false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Base_Url}}/repos/{{Owner}}/{{Repo-Name}}",
+          "host": [
+            "{{Base_Url}}"
+          ],
+          "path": [
+            "repos",
+            "{{Owner}}",
+            "{{Repo-Name}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
