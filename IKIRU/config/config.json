@@ -1,0 +1,24 @@
+{
+    "app": {
+        "url": "https://ikiru.in/",
+        "title": "IKIRU: Buy Best of Furniture, Lights & Home Decor Online",
+        "username": "bharattechacademy5@outlook.com",
+        "password": "BharathTechAcademy#1234"
+    },
+    "api": {
+        "base_url": "https://api.github.com",
+        "owner": "nihar-playwright",
+        "token": "Bearer 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"
+    },
+    "db": {
+        "host": "localhost",
+        "port": 3306,
+        "username": "root",
+        "password": "root"
+    },
+    "ollama": {
+        "base_url": "http://localhost:11434",
+        "model": "llama2-7b-chat",
+        "timeout": 30000
+    }
+}

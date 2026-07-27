@@ -1,0 +1,4 @@
+{
+    "logo":"img[class='logo header__logo--desktop lg:block hidden']",
+    "searchBox": "#SearchInput-sections--19610911408281__header"
+}
