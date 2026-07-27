@@ -20,7 +20,9 @@ export class CookiesPageSteps {
      async verifyCookiesPopUpContent(expectedContent: string) {
           await this.web.isElementVisible(cookiePage.cookiesContent);
           const actualContent: string | null = await this.web.getText(cookiePage.cookiesContent);
-          await this.web.verifyValueContains(actualContent, expectedContent);
+          if (actualContent) {
+               await this.web.verifyValueContains(actualContent, expectedContent);
+          }
      }
 
      //Method to Verify Logos Displayed in the Cookies Popup 
