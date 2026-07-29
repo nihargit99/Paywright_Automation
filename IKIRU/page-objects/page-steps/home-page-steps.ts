@@ -16,6 +16,11 @@ export class HomePageSteps {
     async launchApplication() {
         await this.web.launchApplication(config.app.url, config.app.title);
     }
+
+    //Method to increase window size
+    async setWindowSize(){
+        await this.web.setResolution(1920,1080)
+    }
     // Method to verify home page displayed after successful login
     async verifyHomePageDisplayed() {
         await this.web.isElementVisible(homePage.logo);
@@ -27,13 +32,23 @@ export class HomePageSteps {
     }
 
     //Method to enter text on searchbox
-    async enterSearchValue(){
-        await this.web.enterText(homePage.searchBox,"Table Lamp")
+    async enterSearchValue() {
+        await this.web.enterText(homePage.searchBox, "Table Lamp")
     }
-    
+
     //Method to hit enter from the keyborad
-    async pressEnter(){
+    async pressEnter() {
         await this.web.pressKey("Enter")
+    }
+
+    //Method to hover on Decor Option
+    async hoverOnDecor() {
+        await this.web.hoverOverElement(homePage.decor)
+    }
+
+    //Method to click on Wall paintings and wall
+    async clickOnWallPaintingsAndWall() {
+        await this.web.clickElement(homePage.wallPaintingsAndWalls)
     }
 
 }

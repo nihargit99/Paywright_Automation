@@ -1,3 +1,8 @@
 {
-    "productCount":"#ProductCount"
+    "productCount":"#ProductCount",
+    "firstProduct":"(//a[@class='reversed-link block  text-limit-1-line'])[17]",
+    "productTitle":".product__title.h4",
+    "productPrice":"(//span[@class='f-price-item f-price-item--sale'])[9]",
+    "increaseQuantity":"(//button[@class='quantity__button'])[2]",
+    "addToCart":"(//*[@class='btn__text'])[3]"
 }

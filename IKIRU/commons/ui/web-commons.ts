@@ -64,7 +64,7 @@ export class WebCommons {
     //Select an option from the drop-down. 
     async selectOption(locator: string, option: string) {
         const element = await this.element(locator);
-        await this.scrollToElement(locator);
+        // await this.scrollToElement(locator);
         await element.selectOption(option);
     }
 
@@ -195,5 +195,11 @@ export class WebCommons {
     async pressKey(key: string) {
         await this.page.keyboard.press(key);
     }
+
+    // Verify the current URL contains the expected text
+   async verifyUrlContains(expectedURL: string) {
+    const url = this.page.url();
+    expect(url).toContain(expectedURL);
+}
 
 }

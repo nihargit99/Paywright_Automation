@@ -1,4 +1,7 @@
 {
     "logo":"img[class='logo header__logo--desktop lg:block hidden']",
-    "searchBox": "#SearchInput-sections--19610911408281__header"
+    "searchBox": "#SearchInput-sections--19610911408281__header",
+    "decor":"//span[@class='flex items-center menu__item-text reversed-link'][text()='Decor']",
+    "wallPaintingsAndWalls":"//span[text()='Wall Paintings & Prints']",
+    "wallPaintingsAndWallsText":"//span[@class='breadcrumbs--last text-subtext']"
 }

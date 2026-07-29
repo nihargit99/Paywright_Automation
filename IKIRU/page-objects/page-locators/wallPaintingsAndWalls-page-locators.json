@@ -1,0 +1,13 @@
+{
+    "wallPaintingsAndWallsText": "//span[@class='breadcrumbs--last text-subtext']",
+    "priceText":"(//span[@class='h6'][normalize-space()='Price'])[2]",
+    "priceFiled":"//input[@id='FacetFormInputFromPrice-vertical']",
+    "availabilityText":"(//span[@class='h6'][normalize-space()='Availability'])[2]",
+    "InStockCheckBox":"//label[@for='vertical-filter.v.availability-1']//span[normalize-space()='In stock']",
+    "sortBy":"//select[@id='SortBy-collection']",
+    "compareButton":"//span[text()='Compare:']",
+    "clearAllLink":"//button[@class='hidden md:inline-flex compare-bar__clear btn btn--link']",
+    "numberOfProduct":"//p[@id='ProductCount']",
+    "clearALLButton":"//a[normalize-space()='Clear all']"
+}
+
