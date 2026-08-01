@@ -60,6 +60,8 @@ test.describe('Autoamting testcase-4', () => {
         //Check the "Home" checkbox under purpose
         //Click the status field dropdown and select "Done" option
         //Click the "Submit" button
+
+        //This above tasks need to be done
         
 
     });
