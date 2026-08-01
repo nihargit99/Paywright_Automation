@@ -1,17 +1,25 @@
 {
     "Verify Testcase-1": {
         "count": "results",
-        "productURL":"products",
-        "productTitle":"Table Lamp",
-        "productPrice":"₹",
-        "cartText":"Your ",
-        "shippingPolicy":"Shipping policy"
+        "productURL": "products",
+        "productTitle": "Table Lamp",
+        "productPrice": "₹",
+        "cartText": "Your ",
+        "shippingPolicy": "Shipping policy"
     },
-    
-     "Verify Testcase-2": {
-        "wallPaintingsAndWallsText":"Wall Paintings & Prints",
-        "price":"1000",
-        "dropdownValue":"Price, low to high",
-        "secondDropdownValue":"Best selling"
-     }
-}
+    "Verify Testcase-2": {
+        "wallPaintingsAndWallsText": "Wall Paintings & Prints",
+        "price": "1000",
+        "dropdownValue": "Price, low to high",
+        "secondDropdownValue": "Best selling"
+    },
+    "Verify Testcase-3": {
+        "diningTableText": "Dining Table",
+        "prodCount": "products",
+        "sharePopupText": "Share this product",
+        "copiedButtonText": "Copied",
+        "pinCode": "abcedf",
+        "validPinCode": "560037",
+        "deliveryMessage": "Average Delivery Time: 15-20 days"
+    }
+} 

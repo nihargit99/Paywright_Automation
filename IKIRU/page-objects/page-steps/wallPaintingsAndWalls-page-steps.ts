@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test";
 import wallPaintingsAndWallsPage from '../page-locators/wallPaintingsAndWalls-page-locators.json' with{type: 'json'};
 import { WebCommons } from "../../commons/ui/web-commons.js";
-import config from '../../config/config.json' with {type: 'json'};
+
 
 export class WallPaintingsAndWalls {
     page: Page
@@ -72,7 +72,7 @@ export class WallPaintingsAndWalls {
     async clickOnClearALLButton(){
         await this.web.clickElement(wallPaintingsAndWallsPage.clearALLButton)
     }
-
+    
 
 
 }

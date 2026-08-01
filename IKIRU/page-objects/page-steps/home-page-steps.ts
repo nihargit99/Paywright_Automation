@@ -51,4 +51,14 @@ export class HomePageSteps {
         await this.web.clickElement(homePage.wallPaintingsAndWalls)
     }
 
+    //Method to hover on Furniture Option
+    async hoverOnFurniture() {
+        await this.web.hoverOverElement(homePage.furniture)
+    }
+
+        //Method to click on Dining Table Option
+    async clickOnDiningTable() {
+        await this.web.clickElement(homePage.diningTable)
+    }
+  
 }

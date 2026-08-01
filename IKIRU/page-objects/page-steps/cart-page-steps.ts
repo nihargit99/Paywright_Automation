@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test";
 import cartPage from '../page-locators/cart-page-locators.json' with{type: 'json'};
 import { WebCommons } from "../../commons/ui/web-commons.js";
-import config from '../../config/config.json' with {type: 'json'};
+
 
 export class CartPageSteps {
     page: Page

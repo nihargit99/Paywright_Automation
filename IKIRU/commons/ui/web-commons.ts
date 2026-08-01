@@ -156,6 +156,11 @@ export class WebCommons {
 
     //Method to set the resolution of the browser window 
     async setResolution(width: number, height: number) {
+        const current = this.page.viewportSize();
+        if (!current) {
+            // viewport is disabled (using real browser window size); skip resizing
+            return;
+        }
         await this.page.setViewportSize({ width, height });
     }
 

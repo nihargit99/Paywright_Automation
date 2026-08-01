@@ -1,0 +1,14 @@
+{
+    "diningTableText":".breadcrumbs--last.text-subtext",
+    "prodCount":"#ProductCount",
+    "firstProduct":"(//a[@class='reversed-link block  text-limit-1-line'])[9]",
+    "shareIcon":"//button[@class='product__review-share-button btn btn--icon color-scheme-2']",
+    "shareIconText":"//h3[text()='Share this product']",
+    "copyButton":".btn.btn-copy",
+    "copiedButtonText":".btn.btn-copy.copied",
+    "closeButton":"//basic-modal[@id='PopupModal-Sharing-template--19610911211673__main']//button[@aria-label='Close']",
+    "pinCode":"//input[@id='pincode-input']",
+    "checkButton":"//span[text()='Check']",
+    "deliveryMessage":"//div[@id='delivery-message']"
+
+}
