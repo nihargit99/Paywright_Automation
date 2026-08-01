@@ -1,0 +1,8 @@
+{
+    "curtleryText":"//span[@class='breadcrumbs--last text-subtext']",
+    "firstProduct":"(//a[@class='reversed-link block  text-limit-1-line'])[9]",
+    "needAnyHelp":"//span[text()='Need Any Help OR Want to buy this in bulk?']",
+    "contactInfo":".h2.product__popup-page-title",
+    "fillTheForm":"//div[@class='drawer__body v-scrollable h-full']/child::p/child::a[@title='https://airtable.com/shrIyYbrCFDgv6nL2']",
+    "closeCookiePopup":"svg[aria-label='Close']"
+}

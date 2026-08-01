@@ -11,7 +11,6 @@ let cartPage: CartPageSteps;
 let testData: any;
 let testInfo: TestInfo;
 
-
 test.describe('Autoamting testcase-1', () => {
 
     //Initialize the page objects delivery test case. 
@@ -70,6 +69,7 @@ test.describe('Autoamting testcase-1', () => {
 
         //User click and verify shipping link 
         await cartPage.clickAndVerifyShippingUrl(testData["shippingPolicy"])
+
 
     });
 

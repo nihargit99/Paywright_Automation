@@ -21,5 +21,9 @@
         "pinCode": "abcedf",
         "validPinCode": "560037",
         "deliveryMessage": "Average Delivery Time: 15-20 days"
+    },
+    "Verify Testcase-4": {
+       "cutleryText": "Cutlery",
+       "contactInfoText": "Contact Info"
     }
 } 

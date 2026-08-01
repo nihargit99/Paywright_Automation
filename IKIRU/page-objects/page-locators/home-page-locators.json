@@ -5,5 +5,8 @@
     "wallPaintingsAndWalls":"//span[text()='Wall Paintings & Prints']",
     "wallPaintingsAndWallsText":"//span[@class='breadcrumbs--last text-subtext']",
     "furniture":"//span[@class='flex items-center menu__item-text reversed-link'][text()='Furniture']",
-    "diningTable":"(//span[text()='Dining Table'])[1]"
+    "diningTable":"(//span[text()='Dining Table'])[1]",
+    "kitchenWare":"//span[@class='flex items-center menu__item-text reversed-link'][text()='Kitchenware']",
+    "cutlery":"(//span[text()='Cutlery'])[1]"
+
 }

@@ -54,6 +54,24 @@ export class WebCommons {
         await element.click();
     }
 
+    //Click on the target element and wait for it to open a new tab or popup.
+    async clickElementAndWaitForNewTab(locator: string): Promise<Page> {
+        const element = await this.element(locator);
+        await this.scrollToElement(locator);
+        const [newPage] = await Promise.all([
+            this.page.waitForEvent('popup'),
+            element.click()
+        ]);
+        await newPage.waitForLoadState('load');
+        return newPage;
+    }
+
+    //Click an element on a specific Page instance.
+    async clickElementOnPage(page: Page, locator: string) {
+        const element = page.locator(locator);
+        await element.click();
+    }
+
     //Type the text in the target element.
     async enterText(locator: string, text: string) {
         const element = await this.element(locator);

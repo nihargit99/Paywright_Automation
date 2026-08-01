@@ -16,13 +16,15 @@ export class CartPageSteps {
     async verifycartPage(expectedCart: string) {
         const actualCart = await this.web.getText(cartPage.cartText)
         await this.web.verifyValueContains(actualCart, expectedCart)
+        await this.web.takeScreenshot('screenshots/cartPage.png');
     }
 
     //Method to click and verify shipping link
     async clickAndVerifyShippingUrl(expectShippingPolicyText: string) {
         await this.web.clickElement(cartPage.shippingLink)
-        const actualShippingPolicyText = await this.web.getText(cartPage.shippingPolicy)
-        await this.web.compareValues(actualShippingPolicyText, expectShippingPolicyText)
+        const actualShippingPolicyText = await this.web.getText(cartPage.shippingPolicy);
+        await this.web.compareValues(actualShippingPolicyText, expectShippingPolicyText);
+        await this.web.takeScreenshot('screenshots/shippingPolicy.png');
     }
 
 }

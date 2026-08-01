@@ -15,23 +15,27 @@ export class ProductPageSteps {
     //Method to verify the product count
     async verifyProductCount(expectedCount: string) {
         const actualCount: string | null = await this.web.getText(productPage.productCount)
-        await this.web.verifyValueContains(actualCount, expectedCount)
+        await this.web.verifyValueContains(actualCount, expectedCount);
+        await this.web.takeScreenshot('screenshots/productCount.png');
     }
 
     //Method to click on the 1st product
     async clickOnFirstProduct() {
         await this.web.clickElement(productPage.firstProduct)
+        await this.web.takeScreenshot('screenshots/firstProductClicked.png');
     }
 
     //Method to verify Product page URL
     async verifyProductPageUrl(expectedURL: string) {
-        await this.web.verifyUrlContains(expectedURL)
+        await this.web.verifyUrlContains(expectedURL);
+        await this.web.takeScreenshot('screenshots/productPageUrl.png');
     }
 
     //Method to verify product title
     async verifyProdcutTitle(expectedTitle: string) {
         const actualTitle = await this.web.getText(productPage.productTitle)
-        await this.web.verifyValueContains(actualTitle, expectedTitle)
+        await this.web.verifyValueContains(actualTitle, expectedTitle);
+        await this.web.takeScreenshot('screenshots/productTitle.png');
     }
 
     //Method to verify product price
@@ -39,17 +43,20 @@ export class ProductPageSteps {
         const actualPrice = await this.web.getText(productPage.productPrice)
         console.log(`actual Price ${actualPrice}`)
         console.log(`expected Price ${expectedPrice}`)
-        await this.web.verifyValueContains(actualPrice, expectedPrice)
+        await this.web.verifyValueContains(actualPrice, expectedPrice);
+        await this.web.takeScreenshot('screenshots/productPrice.png');
     }
 
     //Method to increase product the quantity
     async increaseQunatity() {
-        await this.web.clickElement(productPage.increaseQuantity)
+        await this.web.clickElement(productPage.increaseQuantity);
+        await this.web.takeScreenshot('screenshots/increaseQuantity.png');
     }
 
     //Method to click on add to cart
     async clickOnAddToCart(){
-        await this.web.clickElement(productPage.addToCart)
+        await this.web.clickElement(productPage.addToCart);
+        await this.web.takeScreenshot('screenshots/addToCart.png');
     }
 
 }
