@@ -2,7 +2,6 @@ import { Page } from "@playwright/test";
 import curtleryPage from '../page-locators/curtlery-page-locators.json' with{type: 'json'};
 import { WebCommons } from "../../commons/ui/web-commons.js";
 
-
 export class CutleryPageSteps {
     page: Page
     web: WebCommons
@@ -10,7 +9,6 @@ export class CutleryPageSteps {
     constructor(page: Page) {
         this.page = page;
         this.web = new WebCommons(page);
-
     }
 
     //method to verify cutlery page
@@ -40,13 +38,12 @@ export class CutleryPageSteps {
     }
 
     //Method to click on "Please Fill the Form" and wait for the new tab.
-    async clickOnPleaseFillTheForm() {
+    async clickOnPleaseFillTheForm(): Promise<Page> {
         const newPage = await this.web.clickElementAndWaitForNewTab(curtleryPage.fillTheForm);
         await newPage.screenshot({ path: 'screenshots/fillTheForm.png' });
-        await newPage.waitForLoadState('networkidle');
-       
+        return newPage;
     }
 
-   
+
 
 }

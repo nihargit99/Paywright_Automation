@@ -24,6 +24,13 @@
     },
     "Verify Testcase-4": {
        "cutleryText": "Cutlery",
-       "contactInfoText": "Contact Info"
+       "contactInfoText": "Contact Info",
+       "pageUrl":"https://airtable.com/appzYIUaAy6vyWn4v/shrIyYbrCFDgv6nL2",
+       "pageText":"Bulk Orders, Thoughtfully Handled",
+       "name": "demo Tester",
+       "phoneNumber": "9876543210",
+       "email": "demo@gmail.com",
+       "quantity": "5",
+       "dropdownValue": "Done"
     }
 } 

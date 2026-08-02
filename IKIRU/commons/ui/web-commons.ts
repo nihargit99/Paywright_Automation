@@ -58,11 +58,14 @@ export class WebCommons {
     async clickElementAndWaitForNewTab(locator: string): Promise<Page> {
         const element = await this.element(locator);
         await this.scrollToElement(locator);
+
         const [newPage] = await Promise.all([
-            this.page.waitForEvent('popup'),
+            this.page.context().waitForEvent('page'),
             element.click()
         ]);
-        await newPage.waitForLoadState('load');
+
+        await newPage.waitForLoadState('domcontentloaded');
+
         return newPage;
     }
 
@@ -82,7 +85,7 @@ export class WebCommons {
     //Select an option from the drop-down. 
     async selectOption(locator: string, option: string) {
         const element = await this.element(locator);
-        // await this.scrollToElement(locator);
+        await this.scrollToElement(locator);
         await element.selectOption(option);
     }
 
@@ -219,10 +222,10 @@ export class WebCommons {
         await this.page.keyboard.press(key);
     }
 
-    // Verify the current URL contains the expected text
-   async verifyUrlContains(expectedURL: string) {
-    const url = this.page.url();
-    expect(url).toContain(expectedURL);
-}
+
+    //Method to verify the url contains the expected value.
+    async verifyUrlContains(expectedURL: string) {
+        expect(this.page.url()).toContain(expectedURL);
+    }
 
 }

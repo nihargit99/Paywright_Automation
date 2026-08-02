@@ -1,0 +1,14 @@
+{
+    "pageUrl":"https://airtable.com/shrIyYbrCFDgv6nL2",
+    "pageText":"//h1[text()='Bulk Orders, Thoughtfully Handled']",
+    "closeCookiePopup":"svg[aria-label='Close']",
+    "nameField":"(//input[@type='text'])[1]",
+    "phoneField":"//input[@type='tel']",
+    "emailField":"//input[@type='email']",
+    "quantityField":"(//input[@type='text'])[3]",
+    "OfficeCheckbox":"//div[text()='Office']",
+    "homeCheckbox":"//div[text()='Home']",
+    "statusDropdown":".truncate.flex-auto",
+    "doneOption":"//div[@title='Done']",
+    "submitButton":"//button[@type='button']"
+}

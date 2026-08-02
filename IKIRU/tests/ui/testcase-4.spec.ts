@@ -1,10 +1,12 @@
 import { test, TestInfo } from '@playwright/test';
 import { HomePageSteps } from '../../page-objects/page-steps/home-page-steps.js';
 import { CutleryPageSteps } from '../../page-objects/page-steps/curtlery-page-steps.js';
+import { Cutlery1PageSteps } from '../../page-objects/page-steps/curtlery1-page-steps.js';
 import data from '../../testdata/ui/data.json' with {type: 'json'};
 
 let homePage: HomePageSteps;
 let cutleryPage: CutleryPageSteps;
+let cutlery1Page: Cutlery1PageSteps;
 let testData: any;
 let testInfo: TestInfo;
 
@@ -14,6 +16,7 @@ test.describe('Autoamting testcase-4', () => {
     test.beforeEach(async ({ page }) => {
         homePage = new HomePageSteps(page);
         cutleryPage = new CutleryPageSteps(page);
+        // cutlery1Page = new Cutlery1PageSteps(page);
     });
 
     //Test Case 4: Verify User is Logged in 
@@ -47,22 +50,41 @@ test.describe('Autoamting testcase-4', () => {
         await cutleryPage.verifyContactInfoDisplayed(testData["contactInfoText"]);
 
         //User click on "Please Fill the Form"
-        await cutleryPage.clickOnPleaseFillTheForm();
+        // await cutleryPage.clickOnPleaseFillTheForm();
+        const newPage = await cutleryPage.clickOnPleaseFillTheForm();
 
-        //Wait for the new page to load
+        // Create the Page Object using the new tab
+        cutlery1Page = new Cutlery1PageSteps(newPage);
+
         // Verify the new page url
-        //Verify the new page text
-        // Enter "demo Tester" in the "Name" field
-        //Enter "9876543210" in the "Phone Number" field
-        //Enter "demo@gmail.com" in the "Email" field
-        //Enter "5" in the "Quantity" field
-        //Check the "Office" checkbox under purpose
-        //Check the "Home" checkbox under purpose
-        //Click the status field dropdown and select "Done" option
-        //Click the "Submit" button
+        await cutlery1Page.verifyUrlContains(testData["pageUrl"]);
 
-        //This above tasks need to be done
-        
+        // Verify the new page text
+        await cutlery1Page.verifyCutleryPageText(testData["pageText"]);
+
+        //User click on close cookie popup
+        await cutlery1Page.closeCookiePopup();
+
+        // Enter "demo Tester" in the "Name" field
+        await cutlery1Page.enterName(testData["name"]);
+
+        //Enter "9876543210" in the "Phone Number" field
+        await cutlery1Page.enterPhoneNumber(testData["phoneNumber"]);
+
+        //Enter "demo@gmail.com" in the "Email" field
+        await cutlery1Page.enterEmail(testData["email"]);
+
+        //Enter "5" in the "Quantity" field
+        await cutlery1Page.enterQuantity(testData["quantity"]);
+
+        //Check the "Office" and "Home" checkbox under purpose
+        await cutlery1Page.checkPurposeCheckboxes();
+
+        //Click the status field dropdown and select "Done" option
+        await cutlery1Page.selectStatusOption(testData["dropdownValue"]);
+
+        //Click the "Submit" button
+        await cutlery1Page.clickSubmitButton();
 
     });
 
