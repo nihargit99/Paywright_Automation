@@ -32,5 +32,12 @@
        "email": "demo@gmail.com",
        "quantity": "5",
        "dropdownValue": "Done"
+    },
+    "Verify Testcase-5":{
+        "emptyCartText":"Your cart is currently empty.",
+        "productPageText":"Products",
+        "tipsAndHacksText":"Tips and hacks",
+        "careersATIKIRUText":"Careers at IKIRU",
+        "searchValue": "Manager"
     }
-} 
+}

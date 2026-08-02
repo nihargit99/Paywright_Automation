@@ -1,0 +1,5 @@
+{
+    "tipsAndHacksPageText":"//span[text()='Tips and hacks']",
+    "readMoreButton":"//span[text()='Read more']",
+    "homeButton":"a[title='Home']"
+}

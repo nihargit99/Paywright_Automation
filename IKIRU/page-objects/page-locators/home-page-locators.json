@@ -7,6 +7,8 @@
     "furniture":"//span[@class='flex items-center menu__item-text reversed-link'][text()='Furniture']",
     "diningTable":"(//span[text()='Dining Table'])[1]",
     "kitchenWare":"//span[@class='flex items-center menu__item-text reversed-link'][text()='Kitchenware']",
-    "cutlery":"(//span[text()='Cutlery'])[1]"
+    "cutlery":"(//span[text()='Cutlery'])[1]",
+    "cartIcon":".cart-drawer-button.flex.items-center.justify-center.relative.cart-icon.cart-icon--solid",
+    "carrierAtIkiruLink":"//span[normalize-space()='Careers at IKIRU']"
 
 }

@@ -79,4 +79,16 @@ export class HomePageSteps {
         await this.web.takeScreenshot('screenshots/cutleryClicked.png');
     }
 
+    //Method to click on Cart Icon(top RIght corner)
+    async clickOnCartIcon() {
+        await this.web.clickElement(homePage.cartIcon)
+        await this.web.takeScreenshot('screenshots/cartIconClicked.png');
+    }
+
+    //Method to click on Careers at IKIRU link
+    async clickOnCareersAtIkiruLink() {
+        await this.web.clickElement(homePage.carrierAtIkiruLink)
+        await this.web.takeScreenshot('screenshots/careersAtIkiruClicked.png');
+    }
+
 }

@@ -1,5 +1,7 @@
 {
     "cartText":"//span[text()='Your cart']",
     "shippingLink":"a[class='btn--link text-sm-extra']",
-    "shippingPolicy":"//h1[text()='Shipping policy']"
+    "shippingPolicy":"//h1[text()='Shipping policy']",
+    "cartEmptyText":"p[class='h4']",
+    "continueShoppingButton":"//span[text()='Continue shopping']"
 }

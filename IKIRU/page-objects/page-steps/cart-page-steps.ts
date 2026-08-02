@@ -27,4 +27,19 @@ export class CartPageSteps {
         await this.web.takeScreenshot('screenshots/shippingPolicy.png');
     }
 
+    //Method to verify cart is empty
+    async verifyCartIsEmpty(expectedCartEmptyText: string) {
+        const actualCartEmptyText = await this.web.getText(cartPage.cartEmptyText);
+        await this.web.verifyValueContains(actualCartEmptyText, expectedCartEmptyText);
+        await this.web.takeScreenshot('screenshots/cartIsEmpty.png');
+    }
+
+    //Method to click on continue shopping button
+    async clickOnContinueShoppingButton() {
+        await this.web.clickElement(cartPage.continueShoppingButton);
+        await this.web.takeScreenshot('screenshots/continueShoppingClicked.png');
+    }
+
+
+
 }

@@ -1,0 +1,8 @@
+{
+    "pageText":"//h1[@id=':rq:']",
+    "hambergerMenu":"//div[@class='x78zum5 xdt5ytf']//div[@class='x78zum5 xdt5ytf']",
+    "applyNowLink":"//span[normalize-space()='Apply Now']",
+    "searchIcon":"svg[role='graphics-symbol'][class='magnifyingGlass x1lliihq x2lah0s x17z2i9w x17rw0jw x1kihv7h x1heor9g']",
+    "searchBox":"//input[@placeholder='Search in 🌿 Careers at IKIRU…']",
+    "clickOnFirstItem":"(//div[@class='notranslate'])[9]"
+}

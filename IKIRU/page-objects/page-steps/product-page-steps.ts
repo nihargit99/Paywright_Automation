@@ -12,6 +12,13 @@ export class ProductPageSteps {
         this.web = new WebCommons(page);
     }
 
+    //Method to verify product page
+    async verifyProductPage(expProdcutText: string) {
+        const actualProductText = await this.web.getText(productPage.prodcutPageText)
+        await this.web.verifyValueContains(actualProductText, expProdcutText);
+        await this.web.takeScreenshot('screenshots/productPage.png');
+    }
+
     //Method to verify the product count
     async verifyProductCount(expectedCount: string) {
         const actualCount: string | null = await this.web.getText(productPage.productCount)
@@ -54,9 +61,16 @@ export class ProductPageSteps {
     }
 
     //Method to click on add to cart
-    async clickOnAddToCart(){
+    async clickOnAddToCart() {
         await this.web.clickElement(productPage.addToCart);
         await this.web.takeScreenshot('screenshots/addToCart.png');
+    }
+
+    //Method to scroll to buttom and click on Blog under useful links
+    async clickOnBlogUnderUsefulLinks() {
+        await this.web.scrollToElement(productPage.blogLink);
+        await this.web.clickElement(productPage.blogLink);
+        await this.web.takeScreenshot('screenshots/blogClicked.png');
     }
 
 }
