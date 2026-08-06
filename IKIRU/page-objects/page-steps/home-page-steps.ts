@@ -91,4 +91,24 @@ export class HomePageSteps {
         await this.web.takeScreenshot('screenshots/careersAtIkiruClicked.png');
     }
 
+    //Method to click on Powered By Shopify
+    async clickOnPoweredByShopify(): Promise<Page> {
+        const newPage = await this.web.clickElementAndWaitForNewTab(homePage.poweredByShopify);
+        await newPage.screenshot({ path: 'screenshots/fillTheForm.png' });
+        return newPage;
+    }
+
+    //Method to click on warranty And Cancellation
+    async clickOnWarrantyAndCancellation() {
+        await this.web.clickElement(homePage.warrantyAndCancellation);
+        await this.web.takeScreenshot('screenshots/clickOnWarrantyAndCancellation.png');
+    }
+
+    //Method to click on Terms of service
+    async clickOntermsOfService() {
+        await this.web.clickElement(homePage.termsOfService);
+        await this.web.takeScreenshot('screenshots/clickOntermsOfService.png');
+    }
+
+
 }

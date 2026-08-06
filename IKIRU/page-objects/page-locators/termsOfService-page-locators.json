@@ -1,0 +1,4 @@
+{
+    "TermsOfServiceText":"//h1[normalize-space()='Terms of service']",
+    "PrivacyPolicyText":"//a[@class='reversed-link'][normalize-space()='Privacy Policy']"
+}

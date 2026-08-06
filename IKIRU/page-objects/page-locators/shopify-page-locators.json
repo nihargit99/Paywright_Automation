@@ -1,0 +1,6 @@
+{
+    "startForFree":"(//a[text()='Start for free'])[1]",
+    "startYourFreeTrial":"//h1[normalize-space()='Start your free trial']",
+    "mailFiled":"//*[@id='email']",
+    "continueWithEmail":".primary.full-width.large"
+}

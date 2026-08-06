@@ -222,10 +222,14 @@ export class WebCommons {
         await this.page.keyboard.press(key);
     }
 
-
     //Method to verify the url contains the expected value.
     async verifyUrlContains(expectedURL: string) {
         expect(this.page.url()).toContain(expectedURL);
+    }
+
+    //Method to go back from once scrren
+    async goBack(){
+        await this.page.goBack();
     }
 
 }

@@ -39,5 +39,13 @@
         "tipsAndHacksText":"Tips and hacks",
         "careersATIKIRUText":"Careers at IKIRU",
         "searchValue": "Manager"
+    },
+     "Verify Testcase-6":{
+        "newPageUrl":"https://www.shopify.com",
+        "startYourFreeTrialText":"Start your free trial",
+        "warrantText":"Warranty",
+        "TermsOfServiceText":"Terms",
+        "TermsOfServiceURL":"https://ikiru.in/policies/terms-of-service"
+       
     }
 }

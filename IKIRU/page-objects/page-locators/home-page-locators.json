@@ -9,6 +9,11 @@
     "kitchenWare":"//span[@class='flex items-center menu__item-text reversed-link'][text()='Kitchenware']",
     "cutlery":"(//span[text()='Cutlery'])[1]",
     "cartIcon":".cart-drawer-button.flex.items-center.justify-center.relative.cart-icon.cart-icon--solid",
-    "carrierAtIkiruLink":"//span[normalize-space()='Careers at IKIRU']"
+    "carrierAtIkiruLink":"//span[normalize-space()='Careers at IKIRU']",
+    "poweredByShopify":"//a[normalize-space()='Powered by Shopify']",
+    "warrantyAndCancellation":"//a[normalize-space()='Warranty & Cancellation']",
+    "termsOfService":"//a[normalize-space()='Terms of service']"
+   
+
 
 }
